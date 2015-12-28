@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  @extend %font-smoothing;
+
+  background: $color-white;
+  color: $color-black;
+  font-family: $font-family-default;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+ * Links
+ */
+a {
+  border-bottom: 1px solid rgba($color-primary, 0.3);
+  color: $color-primary;
+  text-decoration: none;
+  transition: $transition-links;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.8);
+  }
+}
+
+/*
+ * Headings
+ */
+h1,
+h2 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: $font-family-display;
+  font-size: rem(18px);
+  margin-bottom: $line-height-base;
+
+  @include bp(800) {
+    font-size: rem(21px);
+    line-height: $line-height-base * 1.5;
+    margin-bottom: $line-height-base * 1.5;
+  }
+}
+
+h2 {
+  font-size: rem(12px);
+  margin-bottom: $line-height-base / 2;
+
+  @include bp(800) {
+    font-size: rem(14px);
+  }
+}
