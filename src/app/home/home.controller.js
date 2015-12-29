@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('tape.core')
-    .controller('CoreController', CoreController);
+    .module('tape.home')
+    .controller('HomeController', HomeController);
 
-  function CoreController() {
+  function HomeController() {
     var vm = this;
 
     activate();

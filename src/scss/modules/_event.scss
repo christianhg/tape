@@ -1,0 +1,16 @@
+.event {
+
+  &--title {
+
+  }
+
+  &--date {
+    display: block;
+    font-style: italic;
+    margin-bottom: $line-height-base / 2;
+  }
+
+  &--image {
+    margin-bottom: $line-height-base;
+  }
+}

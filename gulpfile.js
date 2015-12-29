@@ -24,7 +24,7 @@
 
   var vendor = {
     css: [
-
+      'bower_components/animate.css/animate.min.css'
     ],
     fonts: [
 
@@ -69,7 +69,7 @@
     gulp.src(['./src/app/**/*.html'])
       .pipe(plumber())
       .pipe(templateCache('templates.js', {
-        module: 'groengaard.templates',
+        module: 'tape.templates',
         standalone: true
       }))
       .pipe(gulp.dest('./build/js/templates'));
@@ -161,7 +161,7 @@
   gulp.task('build', ['assets', 'inject'], browserSync.reload);
 
   gulp.task('dev', ['serve'], function() {
-      gulp.watch('./src/**/*', ['build']);
+    gulp.watch('src/**/*', ['build']);
   });
 
   gulp.task('dist-index', function() {

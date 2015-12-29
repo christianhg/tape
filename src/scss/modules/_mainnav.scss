@@ -1,0 +1,158 @@
+/**
+ * Main navigation
+ */
+.main-nav {
+
+  /**
+   * Main navigation menu toggle
+   */
+  &--menu-toggle {
+    @extend %reset-link;
+
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $z-index-main-nav-toggle-menu;
+
+    height: $line-height-base * 3;
+    width: $line-height-base * 3.5;
+
+    &.is-active-add-active {
+      span {
+        transition: background-color 0.5s ease;
+
+        &:before {
+          transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+
+        &:after {
+          transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+      }
+    }
+
+    &.is-active {
+      span {
+        background-color: rgba($color-black, 0);
+
+        &:before {
+          background: $color-white;
+          transform: translateY(8px) rotate(-45deg);
+        }
+
+        &:after {
+          background: $color-white;
+          transform: translateY(-8px) rotate(45deg);
+        }
+      }
+    }
+
+    &.is-active-remove-active {
+      span {
+        background-color: $color-white;
+        transition: background-color 0.5s ease;
+
+        &:before {
+          background-color: $color-white;
+        }
+
+        &:after {
+          background-color: $color-white;
+        }
+      }
+    }
+
+    span {
+      background: $color-black;
+      font-size: 0;
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      height: 4px;
+      top: 50%;
+      margin-top: -2px;
+      transition: background-color 0.5s ease 0.5s;
+
+      &:before {
+        background: $color-black;
+        content: "";
+        height: 4px;
+        position: absolute;
+        width: 100%;
+        top: -8px;
+        transition: transform 0.5s ease, background-color 0.5s ease 0.5s;
+      }
+
+      &:after {
+        background: $color-black;
+        content: "";
+        height: 4px;
+        position: absolute;
+        width: 100%;
+        bottom: -8px;
+        transition: transform 0.5s ease, background-color 0.5s ease 0.5s;
+      }
+    }
+  }
+
+  &--menu {
+    background: $color-menu;
+    color: $color-white;
+
+    position: absolute;
+    top: $line-height-base * 3;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-main-nav-menu;
+
+    height: 100vh;
+    width: 100%;
+
+    font-family: $font-family-display;
+    font-size: rem(30px);
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+
+    display: none;
+
+    &.is-active-add-active {
+      display: block;
+      animation: 1s flipInX ease;
+      transform-origin : center top;
+    }
+
+    &.is-active {
+      display: block;
+    }
+
+    &.is-active-remove-active {
+      display: block;
+      animation: 1s flipOutX ease;
+      transform-origin : center top;
+    }
+  }
+
+    &--menu-links {
+      margin-top: $line-height-base * -2.5;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 1;
+
+      a {
+        @extend %reset-link;
+
+        display: inline-block;
+
+        color: $color-white;
+
+        margin-bottom: $line-height-base;
+      }
+    }
+}

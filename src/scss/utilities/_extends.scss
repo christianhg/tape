@@ -33,3 +33,10 @@
 	-moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+/**
+ * Reset link
+ */
+%reset-link {
+  border: none;
+}

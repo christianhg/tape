@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('tape.core')
-    .controller('CoreController', CoreController);
+    .module('tape.events')
+    .controller('EventsController', EventsController);
 
-  function CoreController() {
+  function EventsController() {
     var vm = this;
 
     activate();
