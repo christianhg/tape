@@ -20,6 +20,14 @@
     &.menu-open-remove-active {
       transition-delay: 0.5s;
     }
+
+    &.is-floating {
+      background: darken($color-header, 5%);
+    }
+
+    &.is-floating-remove {
+      transition-delay: 0s;
+    }
   }
 
   &--logo {
@@ -38,13 +46,19 @@
     padding: 0 20px;
 
     transition: $transition-menu-nav--title;
+    transition-delay: 0s;
 
+    .is-floating &,
     &.is-active {
       color: $color-white;
     }
 
     &.is-active-remove-active {
-      transition: color 0.5s ease 1s;
+      transition-delay: 0.5s;
+    }
+
+    .is-floating-remove & {
+      transition-delay: 0s;
     }
   }
 
@@ -65,16 +79,26 @@
     height: $line-height-base * 3;
     width: $line-height-base * 3.5;
 
+    .is-floating & {
+      span {
+        &,
+        &:before,
+        &:after {
+          background: $color-white;
+        }
+      }
+    }
+
     &.is-active-add-active {
       span {
-        transition: background-color 0.5s ease;
+        // transition: background-color 0.5s ease;
 
         &:before {
-          transition: transform 0.5s ease, background-color 0.5s ease;
+          // transition: transform 0.5s ease, background-color 0.5s ease;
         }
 
         &:after {
-          transition: transform 0.5s ease, background-color 0.5s ease;
+          // transition: transform 0.5s ease, background-color 0.5s ease;
         }
       }
     }
@@ -98,7 +122,6 @@
     &.is-active-remove-active {
       span {
         background-color: $color-white;
-        transition: background-color 0.5s ease;
 
         &:before {
           background-color: $color-white;
@@ -119,7 +142,7 @@
       height: 4px;
       top: 50%;
       margin-top: -2px;
-      transition: background-color 0.5s ease 0.5s;
+      transition: background-color 0.5s ease;
 
       &:before {
         background: $color-black;
@@ -128,7 +151,7 @@
         position: absolute;
         width: 100%;
         top: -8px;
-        transition: transform 0.5s ease, background-color 0.5s ease 0.5s;
+        transition: transform 0.5s ease, background-color 0.5s ease;
       }
 
       &:after {
@@ -138,7 +161,7 @@
         position: absolute;
         width: 100%;
         bottom: -8px;
-        transition: transform 0.5s ease, background-color 0.5s ease 0.5s;
+        transition: transform 0.5s ease, background-color 0.5s ease;
       }
     }
   }
