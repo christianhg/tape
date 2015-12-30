@@ -24,30 +24,10 @@
     <!-- endinject -->
   </head>
   <body>
-    <div class="page">
-
-      <header class="header">
-        <div class="header--inner" ng-class="{'menu-open': vm.menuOpen}">
-          <div class="header--logo">
-            <img src="graphics/logo.svg" alt="TAPE">
-          </div>
-          <h1 class="header--title" ng-class="{'is-active': vm.menuOpen}">TAPE</h1>
-        </div>
-        <main-nav class="main-nav"></main-nav>
-      </header>
-
-      <div class="hero">
-        <div class="hero--logo">
-          <img src="graphics/logo.svg" alt="TAPE">
-        </div>
-      </div>
-
-      <div class="content" ui-view>
-
-      </div>
-
-    </div><!-- /page -->
-
+    <div class="site">
+      <main-nav class="main-nav"></main-nav>
+      <div class="content" ui-view></div>
+    </div>
     <!-- vendor:js -->
     <!-- endinject -->
     <!-- app:js -->

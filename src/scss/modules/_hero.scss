@@ -1,0 +1,21 @@
+.hero {
+  height: 100vh;
+  position: relative;
+
+  &--logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    img {
+      margin: {
+        top: 0;
+        right: auto;
+        bottom: 0;
+        left: auto;
+      }
+      width: $line-height-base / $logo-aspect * 8;
+    }
+  }
+}

@@ -1,6 +1,8 @@
-$z-index-header: 4;
 $z-index-hero: 1;
-$z-index-main-nav-menu: 3;
-$z-index-main-nav-toggle-menu: 5;
 
-$z-index-header--title: 5;
+$z-index-menu-nav: 2;
+  $z-index-menu-nav--bar: 4;
+    $z-index-main-nav--toggle-menu: 5;
+    $z-index-menu-nav--title: 5;
+  $z-index-main-nav--menu: 3;
+    $z-index-main-nav--menu-links: 3;

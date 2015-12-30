@@ -4,6 +4,7 @@
   angular
     .module('tape.core', [
       'ngAnimate',
-      'ui.router'
+      'ui.router',
+      'pc035860.scrollWatch'
     ]);
 })();

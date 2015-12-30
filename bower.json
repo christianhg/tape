@@ -14,6 +14,7 @@
     "angular-animate": "~1.4.8",
     "angular-moment": "~0.10.3",
     "moment": "~2.10.6",
-    "animate.css": "~3.5.0"
+    "animate.css": "~3.5.0",
+    "angular-scroll-watch": "~0.5.5"
   }
 }

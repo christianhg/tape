@@ -1,6 +1,12 @@
-<a class="main-nav--menu-toggle" ng-click="vm.toggleMenu()" ng-class="{'is-active': vm.menuOpen}" href="#">
-  <span>Menu</span>
-</a>
+<div class="main-nav--bar" ng-class="{'menu-open': vm.menuOpen}">
+  <div class="main-nav--logo">
+    <img src="graphics/logo.svg" alt="TAPE">
+  </div>
+  <h1 class="main-nav--title" ng-class="{'is-active': vm.menuOpen}">TAPE</h1>
+  <a class="main-nav--menu-toggle" ng-click="vm.toggleMenu()" ng-class="{'is-active': vm.menuOpen}">
+    <span>Menu</span>
+  </a>
+</div>
 <nav class="main-nav--menu" ng-class="{'is-active': vm.menuOpen}">
   <ol class="main-nav--menu-links">
     <li><a href="#">Events</a></li>

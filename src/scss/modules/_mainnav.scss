@@ -2,6 +2,51 @@
  * Main navigation
  */
 .main-nav {
+  position: fixed;
+  width: 100%;
+  z-index: $z-index-menu-nav;
+
+  &--bar {
+    position: relative;
+    height: $line-height-base * 3;
+    z-index: $z-index-menu-nav--bar;
+
+    transition: $transition-menu-nav--bar;
+
+    &.menu-open {
+      background: darken($color-header, 5%);
+    }
+
+    &.menu-open-remove-active {
+      transition-delay: 0.5s;
+    }
+  }
+
+  &--logo {
+    display: none;
+  }
+
+  &--title {
+    display: inline-block;
+
+    position: absolute;
+    left: 0;
+    z-index: $z-index-menu-nav--title;
+
+    line-height: $line-height-base * 3;
+
+    padding: 0 20px;
+
+    transition: $transition-menu-nav--title;
+
+    &.is-active {
+      color: $color-white;
+    }
+
+    &.is-active-remove-active {
+      transition: color 0.5s ease 1s;
+    }
+  }
 
   /**
    * Main navigation menu toggle
@@ -9,12 +54,13 @@
   &--menu-toggle {
     @extend %reset-link;
 
-    display: block;
+    cursor: pointer;
+    display: inline-block;
 
     position: absolute;
     top: 0;
     right: 0;
-    z-index: $z-index-main-nav-toggle-menu;
+    z-index: $z-index-main-nav--toggle-menu;
 
     height: $line-height-base * 3;
     width: $line-height-base * 3.5;
@@ -103,9 +149,8 @@
 
     position: absolute;
     top: $line-height-base * 3;
-    bottom: 0;
     left: 0;
-    z-index: $z-index-main-nav-menu;
+    z-index: $z-index-main-nav--menu;
 
     height: 100vh;
     width: 100%;
@@ -123,7 +168,7 @@
     &.is-active-add-active {
       display: block;
       animation: 1s flipInX ease;
-      transform-origin : center top;
+      // transform-origin: center top;
     }
 
     &.is-active {
@@ -133,7 +178,7 @@
     &.is-active-remove-active {
       display: block;
       animation: 1s flipOutX ease;
-      transform-origin : center top;
+      // transform-origin: center top;
     }
   }
 
@@ -143,7 +188,11 @@
       top: 50%;
       transform: translateY(-50%);
       width: 100%;
-      z-index: 1;
+      padding: {
+        top: $line-height-base * 2.5;
+        bottom: $line-height-base * 2.5;
+      }
+      z-index: $z-index-main-nav--menu-links;
 
       a {
         @extend %reset-link;
