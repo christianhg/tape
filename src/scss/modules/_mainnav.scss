@@ -191,7 +191,6 @@
     &.is-active-add-active {
       display: block;
       animation: 1s flipInX ease;
-      // transform-origin: center top;
     }
 
     &.is-active {
@@ -201,7 +200,6 @@
     &.is-active-remove-active {
       display: block;
       animation: 1s flipOutX ease;
-      // transform-origin: center top;
     }
   }
 
