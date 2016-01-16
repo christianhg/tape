@@ -25,13 +25,13 @@ img {
  * Links
  */
 a {
-  border-bottom: 1px solid rgba($color-primary, 0.3);
-  color: $color-primary;
+  border-bottom: 1px solid rgba($color-secondary, 0.3);
+  color: $color-secondary;
   text-decoration: none;
   transition: $transition-links;
 
   &:hover {
-    border-color: rgba($color-primary, 0.8);
+    border-color: rgba($color-secondary, 0.8);
   }
 }
 
@@ -48,11 +48,11 @@ h2 {
 }
 
 h1 {
-  font-size: rem(22px);
+  font-size: rem($font-size-base * 1.5);
 }
 
 h2 {
-  font-size: rem(22px);
+  font-size: rem($font-size-base * 1.5);
   margin-bottom: $line-height-base / 2;
 }
 

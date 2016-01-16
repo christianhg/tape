@@ -43,7 +43,7 @@
 
     line-height: $line-height-base * 3;
 
-    padding: 0 20px;
+    padding: 0 $gutter;
 
     transition: $transition-menu-nav--title;
     transition-delay: 0s;
@@ -135,33 +135,38 @@
 
     span {
       background: $color-black;
+
       font-size: 0;
+
       position: absolute;
-      left: 20px;
-      right: 20px;
-      height: 4px;
+      left: $gutter;
+      right: $gutter;
       top: 50%;
-      margin-top: -2px;
+
+      height: rem($font-size-base / 4);
+      margin-top: remneg(($font-size-base / 4) / 2);
+
       transition: background-color 0.5s ease;
 
-      &:before {
+      &:before,
+      &:after {
         background: $color-black;
+
         content: "";
-        height: 4px;
+
         position: absolute;
+        height: rem($font-size-base / 4);
         width: 100%;
-        top: -8px;
+
         transition: transform 0.5s ease, background-color 0.5s ease;
       }
 
+      &:before {
+        top: remneg(($font-size-base / 4) * 2);
+      }
+
       &:after {
-        background: $color-black;
-        content: "";
-        height: 4px;
-        position: absolute;
-        width: 100%;
-        bottom: -8px;
-        transition: transform 0.5s ease, background-color 0.5s ease;
+        bottom: remneg(($font-size-base / 4) * 2);
       }
     }
   }

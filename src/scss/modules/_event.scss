@@ -13,15 +13,7 @@
 
   &--image {
     margin-bottom: $line-height-base;
-
-    @include bp(480) {
-      margin-left: -40px;
-      margin-right: -40px;
-    }
-
-    @include bp(960) {
-      margin-left: -160px;
-      margin-right: -160px;
-    }
+    margin-left: $gutter * -1;
+    margin-right: $gutter * -1;
   }
 }
