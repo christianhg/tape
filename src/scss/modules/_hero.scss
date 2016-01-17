@@ -1,12 +1,19 @@
 .hero {
   height: 100vh;
   position: relative;
+  background: url('../graphics/flux2014.jpg');
+  background-size: cover;
 
   &--inner {
+    background: $color-beige;
+
     position: absolute;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+
+    padding: $gutter;
+    max-width: 500px;
   }
 
     &--logo {
@@ -22,6 +29,7 @@
     }
 
     &--tagline {
+      font-size: 1.1em;
       font-style: italic;
       text-align: center;
     }

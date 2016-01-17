@@ -37,6 +37,8 @@
   &--title {
     display: inline-block;
 
+    color: $color-beige;
+
     position: absolute;
     left: 0;
     z-index: $z-index-menu-nav--title;
@@ -134,7 +136,7 @@
     }
 
     span {
-      background: $color-black;
+      background: $color-beige;
 
       font-size: 0;
 
@@ -150,7 +152,7 @@
 
       &:before,
       &:after {
-        background: $color-black;
+        background: $color-beige;
 
         content: "";
 
