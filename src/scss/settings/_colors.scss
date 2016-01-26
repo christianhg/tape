@@ -9,5 +9,10 @@ $color-blue: #14323D;
 $color-primary: $color-blue;
 $color-secondary: $color-green;
 
-$color-header: $color-primary;
-$color-menu: $color-primary;
+$bcolor-menu-nav--menu: $color-beige;
+
+$color-main-nav--title: $color-beige;
+	$color-main-nav--title-is-active: $color-black;
+
+$color-main-nav--menu-toggler: $color-beige;
+	$color-main-nav--menu-toggler-is-active: $color-black;

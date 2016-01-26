@@ -12,8 +12,13 @@
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
 
-    padding: $gutter;
+    padding: $gutter / 2;
+    min-width: 250px;
     max-width: 500px;
+
+    @include bp($bp-tablet) {
+      padding: $gutter;
+    }
   }
 
     &--logo {
@@ -21,16 +26,26 @@
         margin: {
           top: 0;
           right: auto;
-          bottom: $line-height-base;
+          bottom: $line-height-base / 2;
           left: auto;
         }
-        width: $line-height-base / $logo-aspect * 8;
+        width: $line-height-base / $logo-aspect * 5;
+
+        @include bp($bp-tablet) {
+          width: $line-height-base / $logo-aspect * 7;
+        }
       }
     }
 
     &--tagline {
-      font-size: 1.1em;
+      font-size: 1em;
       font-style: italic;
       text-align: center;
+
+      margin-bottom: 0;
+
+      @include bp($bp-tablet) {
+        font-size: 1.1em;
+      }
     }
 }

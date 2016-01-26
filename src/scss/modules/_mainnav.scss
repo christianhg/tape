@@ -2,7 +2,7 @@
  * Main navigation
  */
 .main-nav {
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: $z-index-menu-nav;
 
@@ -10,24 +10,6 @@
     position: relative;
     height: $line-height-base * 3;
     z-index: $z-index-menu-nav--bar;
-
-    transition: $transition-menu-nav--bar;
-
-    &.menu-open {
-      background: darken($color-header, 5%);
-    }
-
-    &.menu-open-remove-active {
-      transition-delay: 0.5s;
-    }
-
-    &.is-floating {
-      background: darken($color-header, 5%);
-    }
-
-    &.is-floating-remove {
-      transition-delay: 0s;
-    }
   }
 
   &--logo {
@@ -36,8 +18,9 @@
 
   &--title {
     display: inline-block;
+    padding: 0 $gutter;
 
-    color: $color-beige;
+    color: $color-main-nav--title;
 
     position: absolute;
     left: 0;
@@ -45,22 +28,11 @@
 
     line-height: $line-height-base * 3;
 
-    padding: 0 $gutter;
-
     transition: $transition-menu-nav--title;
     transition-delay: 0s;
 
-    .is-floating &,
     &.is-active {
-      color: $color-white;
-    }
-
-    &.is-active-remove-active {
-      transition-delay: 0.5s;
-    }
-
-    .is-floating-remove & {
-      transition-delay: 0s;
+      color: $color-main-nav--title-is-active;
     }
   }
 
@@ -81,62 +53,24 @@
     height: $line-height-base * 3;
     width: $line-height-base * 3.5;
 
-    .is-floating & {
-      span {
-        &,
-        &:before,
-        &:after {
-          background: $color-white;
-        }
-      }
-    }
-
-    &.is-active-add-active {
-      span {
-        // transition: background-color 0.5s ease;
-
-        &:before {
-          // transition: transform 0.5s ease, background-color 0.5s ease;
-        }
-
-        &:after {
-          // transition: transform 0.5s ease, background-color 0.5s ease;
-        }
-      }
-    }
-
     &.is-active {
       span {
-        background-color: rgba($color-black, 0);
+        background: rgba($color-black, 0);
 
         &:before {
-          background: $color-white;
+          background: $color-main-nav--menu-toggler-is-active;
           transform: translateY(8px) rotate(-45deg);
         }
 
         &:after {
-          background: $color-white;
+          background: $color-main-nav--menu-toggler-is-active;
           transform: translateY(-8px) rotate(45deg);
         }
       }
     }
 
-    &.is-active-remove-active {
-      span {
-        background-color: $color-white;
-
-        &:before {
-          background-color: $color-white;
-        }
-
-        &:after {
-          background-color: $color-white;
-        }
-      }
-    }
-
     span {
-      background: $color-beige;
+      background: $color-main-nav--menu-toggler;
 
       font-size: 0;
 
@@ -152,7 +86,7 @@
 
       &:before,
       &:after {
-        background: $color-beige;
+        background: $color-main-nav--menu-toggler;
 
         content: "";
 
@@ -174,11 +108,10 @@
   }
 
   &--menu {
-    background: $color-menu;
-    color: $color-white;
+    background: $bcolor-menu-nav--menu;
 
     position: absolute;
-    top: $line-height-base * 3;
+    top: 0;
     left: 0;
     z-index: $z-index-main-nav--menu;
 
@@ -197,7 +130,7 @@
 
     &.is-active-add-active {
       display: block;
-      animation: 1s flipInX ease;
+      animation: 0.5s fadeIn ease;
     }
 
     &.is-active {
@@ -206,12 +139,11 @@
 
     &.is-active-remove-active {
       display: block;
-      animation: 1s flipOutX ease;
+      animation: 0.5s fadeOut ease;
     }
   }
 
     &--menu-links {
-      margin-top: $line-height-base * -2.5;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -227,7 +159,7 @@
 
         display: inline-block;
 
-        color: $color-white;
+        color: $color-black;
 
         margin-bottom: $line-height-base;
       }
